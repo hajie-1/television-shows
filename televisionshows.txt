@@ -1,0 +1,41 @@
+let numberOfNFTs = 0;
+let nft = [];
+
+function mintNFT(TVShow, Genre, Year, IMDBRating) {
+    let nftObject = {
+        TVShow: TVShow,
+        Genre: Genre,
+        Year: Year,
+        IMDBRating: IMDBRating
+    };
+
+    nft.push(nftObject);
+    numberOfNFTs++;
+    return nftObject;
+
+}
+
+function listNFTs() {
+    for (let i = 0; i < numberOfNFTs; i++) {
+        console.log("TV Show: " + nft[i].TVShow);
+        console.log("Genre: " + nft[i].Genre);
+        console.log("Year: " + nft[i].Year);
+        console.log("IMDB Rating: " + nft[i].IMDBRating);
+        console.log();
+    }
+}
+
+function getTotalSupply() {
+    return numberOfNFTs;
+}
+
+console.log("Top 5 Most Watched Television Shows")
+console.log();
+let nft1 = mintNFT("Game of Thrones", "Drama", "2011", "9.2/10");
+let nft2 = mintNFT("Stranger Things", "Drama", "2016", "8.7/10");
+let nft3 = mintNFT("The Walking Dead", "Horror", "2010", "8.1/10");
+let nft4 = mintNFT("Orange is the New Black", "Comedy", "2013", "8.1/10");
+let nft5 = mintNFT("The 100", "Sci-fi", "2014", "7.6/10");
+
+listNFTs();
+console.log("Total number of NFTs: " + getTotalSupply());
